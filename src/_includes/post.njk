@@ -8,7 +8,7 @@ layout: base.njk
     <p class="meta">{{ site.doctor }} · <time datetime="{{ page.date | isoDate }}">{{ page.date | heDate }}</time></p>
   </header>
   {%- if image %}
-  {% picture image, imageAlt, "(max-width: 1120px) 100vw, 1120px", 'class="article-hero"' %}
+  {% picture image, imageAlt or title, "(max-width: 1120px) 100vw, 1120px", 'class="article-hero"' %}
   {%- endif %}
   <div class="prose">
     {{ content | safe }}
