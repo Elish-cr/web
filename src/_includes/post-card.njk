@@ -1,0 +1,13 @@
+<article class="post-card">
+  <a href="{{ post.url }}">
+    {%- if post.data.image %}
+    <img src="{{ post.data.image }}" alt="" loading="lazy">
+    {%- else %}
+    <div class="post-card-blank" aria-hidden="true"></div>
+    {%- endif %}
+    <div class="post-card-body">
+      <h3>{{ post.data.title }}</h3>
+      <p>{{ post.data.description | excerpt(120) }}</p>
+    </div>
+  </a>
+</article>

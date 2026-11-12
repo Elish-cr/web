@@ -1,0 +1,22 @@
+---
+layout: base.njk
+title: טיפולים
+description: טיפולי בוטוקס, חומצה היאלורונית, שפתיים, פיסול אף, שקעי עיניים ואיכות עור בקליניקה של ד״ר אלי שזיפי בראש העין.
+permalink: /treatments/
+---
+<section class="wrap page">
+  <h1 class="page-title">תוצאות אסתטיות</h1>
+  <div class="narrow center-text">
+    <p class="lead">כאן ניתן למצוא חלק ממגוון הטיפולים המוצע בקליניקה</p>
+    <p>מטיפולים ותיקים כמו בוטוקס ועד הטיפולים החדשניים ביותר בתחום - התאמה אישית כדי להביא אותך לתוצאה האידיאלית.</p>
+    <p class="disclaimer">יש לזכור כי התוצאות הן אישיות ולא ניתן להבטיח תוצאות זהות בין מטופלים.</p>
+  </div>
+  <div class="treat-grid">
+    {%- for t in collections.treatments %}
+    <a class="treat-card" href="{{ t.url }}">
+      <img src="/images/{{ t.data.slug }}/cover.jpg" alt="" loading="lazy">
+      <span>{{ t.data.title }}</span>
+    </a>
+    {%- endfor %}
+  </div>
+</section>

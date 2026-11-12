@@ -1,0 +1,27 @@
+---
+layout: base.njk
+title: לקוחות מספרים
+description: חוות דעת של מטופלים ומטופלות על הטיפולים בקליניקה של ד״ר אלי שזיפי בראש העין.
+permalink: /testimonials/
+---
+{%- from "icons.njk" import icon -%}
+<section class="testimonials-page">
+  <div class="testimonials-bg" style="background-image:url('/images/bg-testimonials.jpg')"></div>
+  <div class="wrap page">
+    <h1 class="page-title">הלקוחות מספרים</h1>
+    <p class="lead center-text">קראו חוות דעת של מטופלים ומטופלות מרוצים</p>
+    <div class="t-grid">
+      {%- for r in testimonials.all %}
+      <figure class="t-card">
+        <div class="stars stars-warm" aria-label="5 כוכבים">{% for i in range(5) %}{{ icon("star", 18) }}{% endfor %}</div>
+        <blockquote>{% if r.tag %}<strong>{{ r.tag }}</strong> {% endif %}״{{ r.text }}״</blockquote>
+        <figcaption>{{ r.name }}{% if r.city %} <span>{{ r.city }}</span>{% endif %}</figcaption>
+      </figure>
+      {%- endfor %}
+    </div>
+    <div class="review-shots">
+      <img src="/images/review-1.jpg" alt="ביקורת בגוגל על ד״ר אלי שזיפי" loading="lazy">
+      <img src="/images/review-2.jpg" alt="ביקורת בגוגל על ד״ר אלי שזיפי" loading="lazy">
+    </div>
+  </div>
+</section>

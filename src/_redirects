@@ -1,0 +1,35 @@
+# Old Wix addresses -> new addresses (301 = permanent, keeps Google rankings)
+# Each Hebrew address is listed twice: as written and URL-encoded.
+/אודות  /about/  301!
+/%D7%90%D7%95%D7%93%D7%95%D7%AA  /about/  301!
+/לקוחות-מספרים  /testimonials/  301!
+/%D7%9C%D7%A7%D7%95%D7%97%D7%95%D7%AA-%D7%9E%D7%A1%D7%A4%D7%A8%D7%99%D7%9D  /testimonials/  301!
+/טיפולים  /treatments/  301!
+/%D7%98%D7%99%D7%A4%D7%95%D7%9C%D7%99%D7%9D  /treatments/  301!
+/portfolio  /treatments/  301!
+/portfolio-collections/my-portfolio  /treatments/  301!
+/portfolio-collections/my-portfolio/פיסול-ועיצוב-בחומצה-היאלורונית  /treatments/hyaluronic/  301!
+/portfolio-collections/my-portfolio/%D7%A4%D7%99%D7%A1%D7%95%D7%9C-%D7%95%D7%A2%D7%99%D7%A6%D7%95%D7%91-%D7%91%D7%97%D7%95%D7%9E%D7%A6%D7%94-%D7%94%D7%99%D7%90%D7%9C%D7%95%D7%A8%D7%95%D7%A0%D7%99%D7%AA  /treatments/hyaluronic/  301!
+/portfolio-collections/my-portfolio/שקעי-עיניים  /treatments/eyes/  301!
+/portfolio-collections/my-portfolio/%D7%A9%D7%A7%D7%A2%D7%99-%D7%A2%D7%99%D7%A0%D7%99%D7%99%D7%9D  /treatments/eyes/  301!
+/portfolio-collections/my-portfolio/איכות-ומיצוק-עור  /treatments/skin/  301!
+/portfolio-collections/my-portfolio/%D7%90%D7%99%D7%9B%D7%95%D7%AA-%D7%95%D7%9E%D7%99%D7%A6%D7%95%D7%A7-%D7%A2%D7%95%D7%A8  /treatments/skin/  301!
+/portfolio-collections/my-portfolio/lips  /treatments/lips/  301!
+/portfolio-collections/my-portfolio/פיסול-אף  /treatments/nose/  301!
+/portfolio-collections/my-portfolio/%D7%A4%D7%99%D7%A1%D7%95%D7%9C-%D7%90%D7%A3  /treatments/nose/  301!
+/portfolio-collections/my-portfolio/בוטוקס  /treatments/botox/  301!
+/portfolio-collections/my-portfolio/%D7%91%D7%95%D7%98%D7%95%D7%A7%D7%A1  /treatments/botox/  301!
+/post/מילוי-שפתיים-בין-אומנות-לרפואה  /blog/lips/  301!
+/post/%D7%9E%D7%99%D7%9C%D7%95%D7%99-%D7%A9%D7%A4%D7%AA%D7%99%D7%99%D7%9D-%D7%91%D7%99%D7%9F-%D7%90%D7%95%D7%9E%D7%A0%D7%95%D7%AA-%D7%9C%D7%A8%D7%A4%D7%95%D7%90%D7%94  /blog/lips/  301!
+/post/סקינימליזם  /blog/skinimalism/  301!
+/post/%D7%A1%D7%A7%D7%99%D7%A0%D7%99%D7%9E%D7%9C%D7%99%D7%96%D7%9D  /blog/skinimalism/  301!
+/post/בוטוקס-לקמטים-כל-מה-שצריך-לדעת  /blog/botox/  301!
+/post/%D7%91%D7%95%D7%98%D7%95%D7%A7%D7%A1-%D7%9C%D7%A7%D7%9E%D7%98%D7%99%D7%9D-%D7%9B%D7%9C-%D7%9E%D7%94-%D7%A9%D7%A6%D7%A8%D7%99%D7%9A-%D7%9C%D7%93%D7%A2%D7%AA  /blog/botox/  301!
+/post/ביוסטימולטורים  /blog/biostimulators/  301!
+/post/%D7%91%D7%99%D7%95%D7%A1%D7%98%D7%99%D7%9E%D7%95%D7%9C%D7%98%D7%95%D7%A8%D7%99%D7%9D  /blog/biostimulators/  301!
+/post/הכל-על-טיפול-בבוטוקס-להזעת-יתר-הפתרון-המהיר-והביטוח-שלך  /blog/hyperhidrosis/  301!
+/post/%D7%94%D7%9B%D7%9C-%D7%A2%D7%9C-%D7%98%D7%99%D7%A4%D7%95%D7%9C-%D7%91%D7%91%D7%95%D7%98%D7%95%D7%A7%D7%A1-%D7%9C%D7%94%D7%96%D7%A2%D7%AA-%D7%99%D7%AA%D7%A8-%D7%94%D7%A4%D7%AA%D7%A8%D7%95%D7%9F-%D7%94%D7%9E%D7%94%D7%99%D7%A8-%D7%95%D7%94%D7%91%D7%99%D7%98%D7%95%D7%97-%D7%A9%D7%9C%D7%9A  /blog/hyperhidrosis/  301!
+/post/פולינוקלאוטידים-pdrn-באסתטיקה-סקירה-כללית  /blog/pdrn/  301!
+/post/%D7%A4%D7%95%D7%9C%D7%99%D7%A0%D7%95%D7%A7%D7%9C%D7%90%D7%95%D7%98%D7%99%D7%93%D7%99%D7%9D-pdrn-%D7%91%D7%90%D7%A1%D7%AA%D7%98%D7%99%D7%A7%D7%94-%D7%A1%D7%A7%D7%99%D7%A8%D7%94-%D7%9B%D7%9C%D7%9C%D7%99%D7%AA  /blog/pdrn/  301!
+/blog-feed.xml  /blog/  301!
+/home  /  301!

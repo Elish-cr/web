@@ -1,0 +1,97 @@
+---
+layout: base.njk
+title: בית
+---
+{%- from "icons.njk" import icon -%}
+<section class="hero">
+  <div class="hero-bg" style="background-image:url('/images/clinic-room.jpg')"></div>
+  <div class="hero-box">
+    <p class="hero-brand" lang="en" dir="ltr">Trail of Silk</p>
+    <h1>{{ site.doctor }}</h1>
+  </div>
+  <p class="hero-sub">רפואה אסתטית</p>
+</section>
+
+<section class="intro">
+  <div class="wrap intro-card">
+    <div class="intro-text">
+      <h2>{{ site.doctor }} <span class="md">(MD)</span></h2>
+      <p class="lead">ברוכים הבאים!</p>
+      <p>אני ד"ר אלי שזיפי, מתמחה ברפואת משפחה ורופא לאסתטיקה בעל ניסיון רפואי רחב שמחבר בין עולמות רפואיים ואסתטיים.</p>
+      <p>אני שם דגש על מקצועיות, יחס אישי ותוצאות טבעיות, תוך הקפדה על שימוש בחומרים האיכותיים והבטוחים ביותר.</p>
+      <p>אני מאמין שכל מטופל ומטופלת ראויים לתוצאה שנראית טבעית, מרגישה נכונה ומשפרת את הביטחון העצמי, מבלי לשנות את מי שאתם באמת.</p>
+      <p>תוכלו לקבל במרפאתי את הטיפולים המתקדמים ביותר בתחום וכמובן - אווירה חמה, נינוחה, יחס אישי, מעקב וליווי לכל אורך התהליך עד השגת התוצאה האידיאלית.</p>
+      <p>המרפאה שלי ממוקמת בראש העין.</p>
+    </div>
+    <figure class="intro-photo">
+      <img src="/images/doctor-arms-crossed.jpg" alt="{{ site.doctor }} בקליניקה" width="832" height="1253">
+    </figure>
+  </div>
+</section>
+
+<section class="reviews-strip" aria-label="חוות דעת">
+  <div class="wrap reviews-grid">
+    {%- for r in testimonials.featured %}
+    <figure class="review-card">
+      <div class="stars" aria-label="5 כוכבים">{% for i in range(5) %}{{ icon("star", 26) }}{% endfor %}</div>
+      <figcaption>{{ r.name }} <span>{{ r.city }}</span></figcaption>
+      <blockquote>״{{ r.text }}״</blockquote>
+    </figure>
+    {%- endfor %}
+  </div>
+  <p class="center"><a class="btn btn-brown" href="/testimonials/">לקריאת עוד חוות דעות</a></p>
+</section>
+
+<section class="follow">
+  <div class="wrap">
+    <h2>עקבו ברשתות</h2>
+    <div class="social social-big">
+      <a href="{{ site.whatsapp }}" target="_blank" rel="noopener" aria-label="וואטסאפ" class="s-wa">{{ icon("whatsapp", 40) }}</a>
+      <a href="{{ site.instagram }}" target="_blank" rel="noopener" aria-label="אינסטגרם" class="s-ig">{{ icon("instagram", 40) }}</a>
+      <a href="{{ site.facebook }}" target="_blank" rel="noopener" aria-label="פייסבוק" class="s-fb">{{ icon("facebook", 40) }}</a>
+    </div>
+  </div>
+</section>
+
+<section class="posts-home">
+  <div class="posts-home-bg" style="background-image:url('/images/clinic-room-2.jpg')"></div>
+  <div class="wrap">
+    <h2 class="boxed-title">מאמרים ופוסטים</h2>
+    <div class="post-grid">
+      {%- for post in collections.posts | head(3) %}
+      {% include "post-card.njk" %}
+      {%- endfor %}
+    </div>
+    <p class="center"><a class="btn btn-light" href="/blog/">לכל המאמרים</a></p>
+  </div>
+</section>
+
+<section class="treatments-home">
+  <div class="wrap narrow">
+    <h2>הטיפולים בקליניקה</h2>
+    <p>בקליניקה שלי תוכלו למצוא מגוון רחב של טיפולים, החל מטיפולים קלאסיים כמו בוטוקס ועד טיפולים חדשניים עם טכנולוגיה מתקדמת. המטרה היא להשיג עור צעיר ובריא מבפנים, מבלי לשנות את זהותך. לאחר ייעוץ אישי, נתאים לך תוכנית טיפול מותאמת עבורך שתכלול את הטיפולים הנכונים כדי שתגיע למראה המבוקש.</p>
+    <p>בין הטיפולים ניתן למצוא:</p>
+  </div>
+  <div class="numbered-bg" style="background-image:url('/images/bg-skin.jpg')">
+    <div class="wrap numbered">
+      <article class="num-card">
+        <span class="num">1</span>
+        <h3>טיפולי איכות עור</h3>
+        <p>ברוכים הבאים לעולם טיפולי העור המתקדמים! אני מציע מגוון רחב של טיפולים, כולל לייזר, פילינג רפואי, טיפולים ביוסטימולטורים ומזותרפיה רפואית, שמטרתם להשיג עור צעיר ובריא יותר. הטיפולים מותאמים אישית למאפייני הגיל ומרקם העור, כך שתוכלו ליהנות מעור רענן מבלי לשנות נפח או מבנה פנים.</p>
+        <a class="btn btn-brown" href="/treatments/skin/">עוד מידע</a>
+      </article>
+      <article class="num-card">
+        <span class="num">2</span>
+        <h3>חומצה היאלורונית</h3>
+        <p>חידוד קו הלסת, עיצוב הסנטר, תיקון פרופורציות ואסימטריה בפנים, מילוי עצמות לחיים, החזרת נפח לאחר ירידה משמעותית במשקל, טיפול ברקות ועוד מגוון רחב של טיפולים באמצעות חומצה היאלורונית. מטרת טיפולים אלו היא לספק מראה חיוני, צעיר וטבעי לחלוטין.</p>
+        <a class="btn btn-brown" href="/treatments/hyaluronic/">עוד מידע</a>
+      </article>
+      <article class="num-card">
+        <span class="num">3</span>
+        <h3>בוטוקס</h3>
+        <p>בוטוקס הוא טיפול פופולרי ומקצועי שמעניק תוצאות מידיות ומרשימות. באמצעות טכניקות נכונות, ניתן להפחית קמטים ולהשיג מראה צעיר ורענן. בואו לגלות את היופי שבכם מחדש!</p>
+        <a class="btn btn-brown" href="/treatments/botox/">עוד מידע</a>
+      </article>
+    </div>
+  </div>
+</section>

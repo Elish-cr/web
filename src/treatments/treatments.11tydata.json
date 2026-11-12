@@ -1,0 +1,4 @@
+{
+  "layout": "treatment.njk",
+  "permalink": "/treatments/{{ page.fileSlug }}/"
+}

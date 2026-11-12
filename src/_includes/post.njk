@@ -1,0 +1,20 @@
+---
+layout: base.njk
+---
+<article class="wrap article">
+  <p class="crumbs"><a href="/blog/">מאמרים</a></p>
+  <header>
+    <h1>{{ title }}</h1>
+    <p class="meta">{{ site.doctor }} · <time datetime="{{ page.date | isoDate }}">{{ page.date | heDate }}</time></p>
+  </header>
+  {%- if image %}
+  <img class="article-hero" src="{{ image }}" alt="">
+  {%- endif %}
+  <div class="prose">
+    {{ content | safe }}
+  </div>
+  <p class="article-cta">
+    <a class="btn btn-brown" href="{{ site.booking }}" target="_blank" rel="noopener">קביעת טיפול</a>
+    <a class="btn btn-light" href="{{ site.whatsapp }}" target="_blank" rel="noopener">שאלה בוואטסאפ</a>
+  </p>
+</article>

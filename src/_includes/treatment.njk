@@ -1,0 +1,32 @@
+---
+layout: base.njk
+---
+<section class="wrap page treatment">
+  <p class="crumbs"><a href="/treatments/">טיפולים</a></p>
+  <div class="treatment-head">
+    <div>
+      <h1 class="page-title">{{ title }}</h1>
+      <p class="lead">{{ summary }}</p>
+      {{ content | safe }}
+      <p><a class="btn btn-brown" href="{{ site.booking }}" target="_blank" rel="noopener">קביעת טיפול</a></p>
+    </div>
+    <img class="treatment-cover" src="/images/{{ slug }}/cover.jpg" alt="{{ title }}">
+  </div>
+
+  <h2 class="gallery-title">לפני ואחרי</h2>
+  <div class="gallery">
+    {%- for i in range(1, photos + 1) %}
+    <a href="/images/{{ slug }}/{{ i }}.jpg" target="_blank" rel="noopener">
+      <img src="/images/{{ slug }}/{{ i }}.jpg" alt="{{ title }} - תמונה {{ i }} לפני ואחרי" loading="lazy">
+    </a>
+    {%- endfor %}
+  </div>
+  <p class="disclaimer">יש לזכור כי התוצאות הן אישיות ולא ניתן להבטיח תוצאות זהות בין מטופלים.</p>
+
+  {%- set list = collections.treatments %}
+  <nav class="prev-next" aria-label="טיפולים נוספים">
+    {%- for t in list %}{% if t.url != page.url %}
+    <a href="{{ t.url }}">{{ t.data.title }}</a>
+    {%- endif %}{% endfor %}
+  </nav>
+</section>

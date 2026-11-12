@@ -1,0 +1,34 @@
+{%- from "icons.njk" import icon -%}
+<section class="contact" aria-labelledby="contact-title">
+  <div class="wrap contact-grid">
+    <div class="contact-photo">
+      <img src="/images/doctor-smile.jpg" alt="{{ site.doctor }}" loading="lazy" width="800" height="450">
+      <div class="contact-actions">
+        <a class="btn btn-light" href="{{ site.phoneLink }}">צרו אתי קשר</a>
+        <a class="btn btn-light" href="{{ site.booking }}" target="_blank" rel="noopener">קביעת טיפול</a>
+      </div>
+      <div class="social">
+        <a href="{{ site.whatsapp }}" target="_blank" rel="noopener" aria-label="וואטסאפ" class="s-wa">{{ icon("whatsapp", 26) }}</a>
+        <a href="{{ site.instagram }}" target="_blank" rel="noopener" aria-label="אינסטגרם" class="s-ig">{{ icon("instagram", 26) }}</a>
+        <a href="{{ site.facebook }}" target="_blank" rel="noopener" aria-label="פייסבוק" class="s-fb">{{ icon("facebook", 26) }}</a>
+      </div>
+    </div>
+    <div class="contact-info">
+      <h2 id="contact-title" class="sr-only">יצירת קשר</h2>
+      <div class="info-item">
+        {{ icon("phone", 28) }}
+        <h3>טלפון</h3>
+        <a href="{{ site.phoneLink }}" dir="ltr">{{ site.phone }}</a>
+      </div>
+      <div class="info-item">
+        {{ icon("pin", 28) }}
+        <h3>כתובת</h3>
+        <p>{{ site.street }},<br>{{ site.city }}</p>
+      </div>
+    </div>
+    <div class="contact-map">
+      <iframe title="מפה: {{ site.address }}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://maps.google.com/maps?q=%D7%97%D7%99%D7%99%D7%9D%20%D7%94%D7%A8%D7%A6%D7%95%D7%92%2029%20%D7%A8%D7%90%D7%A9%20%D7%94%D7%A2%D7%99%D7%9F&hl=he&z=15&output=embed"></iframe>
+    </div>
+  </div>
+</section>
