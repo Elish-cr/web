@@ -1,0 +1,58 @@
+[
+ {
+  "from": "/אודות",
+  "to": "/about/"
+ },
+ {
+  "from": "/לקוחות-מספרים",
+  "to": "/testimonials/"
+ },
+ {
+  "from": "/טיפולים",
+  "to": "/treatments/"
+ },
+ {
+  "from": "/portfolio-collections/my-portfolio/פיסול-ועיצוב-בחומצה-היאלורונית",
+  "to": "/treatments/hyaluronic/"
+ },
+ {
+  "from": "/portfolio-collections/my-portfolio/שקעי-עיניים",
+  "to": "/treatments/eyes/"
+ },
+ {
+  "from": "/portfolio-collections/my-portfolio/איכות-ומיצוק-עור",
+  "to": "/treatments/skin/"
+ },
+ {
+  "from": "/portfolio-collections/my-portfolio/פיסול-אף",
+  "to": "/treatments/nose/"
+ },
+ {
+  "from": "/portfolio-collections/my-portfolio/בוטוקס",
+  "to": "/treatments/botox/"
+ },
+ {
+  "from": "/post/מילוי-שפתיים-בין-אומנות-לרפואה",
+  "to": "/blog/lips/"
+ },
+ {
+  "from": "/post/סקינימליזם",
+  "to": "/blog/skinimalism/"
+ },
+ {
+  "from": "/post/בוטוקס-לקמטים-כל-מה-שצריך-לדעת",
+  "to": "/blog/botox/"
+ },
+ {
+  "from": "/post/ביוסטימולטורים",
+  "to": "/blog/biostimulators/"
+ },
+ {
+  "from": "/post/הכל-על-טיפול-בבוטוקס-להזעת-יתר-הפתרון-המהיר-והביטוח-שלך",
+  "to": "/blog/hyperhidrosis/"
+ },
+ {
+  "from": "/post/פולינוקלאוטידים-pdrn-באסתטיקה-סקירה-כללית",
+  "to": "/blog/pdrn/"
+ }
+]

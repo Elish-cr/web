@@ -1,0 +1,25 @@
+---
+# Old Wix addresses with Hebrew characters. Render's Redirects/Rewrites rules
+# don't match non-ASCII paths, so each old address gets a tiny page that
+# forwards instantly. English old addresses are redirected in Render's settings.
+pagination:
+  data: legacyRedirects
+  size: 1
+  alias: r
+permalink: "{{ r.from }}/index.html"
+eleventyExcludeFromCollections: true
+---
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <title>הדף עבר</title>
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="{{ site.url }}{{ r.to }}">
+  <meta http-equiv="refresh" content="0; url={{ r.to }}">
+  <script>location.replace({{ r.to | dump | safe }});</script>
+</head>
+<body>
+  <p>הדף עבר לכתובת חדשה: <a href="{{ r.to }}">{{ site.url }}{{ r.to }}</a></p>
+</body>
+</html>
