@@ -1,4 +1,22 @@
 {
+ "/images/bg-skin.jpg": {
+  "width": 1600,
+  "height": 1067,
+  "webp": [
+   480,
+   960,
+   1600
+  ]
+ },
+ "/images/bg-testimonials.jpg": {
+  "width": 1600,
+  "height": 1199,
+  "webp": [
+   480,
+   960,
+   1600
+  ]
+ },
  "/images/blog/biostimulators.jpg": {
   "width": 928,
   "height": 1152,
@@ -102,6 +120,24 @@
  "/images/botox/cover.jpg": {
   "width": 1600,
   "height": 1067,
+  "webp": [
+   480,
+   960,
+   1600
+  ]
+ },
+ "/images/clinic-room-2.jpg": {
+  "width": 1215,
+  "height": 685,
+  "webp": [
+   480,
+   960,
+   1215
+  ]
+ },
+ "/images/clinic-room.jpg": {
+  "width": 1600,
+  "height": 901,
   "webp": [
    480,
    960,

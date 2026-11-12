@@ -4,9 +4,12 @@
   "type": "module",
   "scripts": {
     "build": "eleventy",
-    "start": "eleventy --serve"
+    "start": "eleventy --serve",
+    "prebuild": "node scripts/images.mjs",
+    "images": "node scripts/images.mjs"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.2"
+    "@11ty/eleventy": "^3.1.2",
+    "sharp": "^0.34.4"
   }
 }

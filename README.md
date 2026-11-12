@@ -36,7 +36,7 @@ Settings that live in the Render dashboard, not in this repo:
 
 ## Adding images
 
-New images work as they are: put the file in `src/images/` and use it. For faster loading, add WebP versions (480px and 960px wide, plus the original width) next to the original as `name-480w.webp`, and so on, and list the image in `src/_data/images.json`. Images listed there get width/height and responsive sizes automatically.
+Put the photo in `src/images/` and use it. Every build (`npm run build`, including Render's) first runs `scripts/images.mjs`, which creates WebP versions (480px, 960px and full width) next to any new photo and records its size in `src/_data/images.json`. Images used through the `{% picture %}` shortcode then get width/height and responsive sizes automatically. To prepare them locally without building, run `npm run images`. Originals are never changed.
 
 ## Blog posts
 
