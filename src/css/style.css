@@ -68,7 +68,7 @@ p { margin: 0 0 1em; }
 .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 92px; }
 .logo img { width: 92px; height: auto; }
 .nav ul { list-style: none; display: flex; gap: 28px; margin: 0; padding: 0; }
-.nav a { text-decoration: none; color: var(--ink); font-size: 1.25rem; }
+.nav a { text-decoration: none; color: var(--ink); font-size: 1.35rem; display: inline-flex; align-items: center; min-height: 48px; padding: 0 6px; }
 .nav a:hover { color: var(--brown); }
 .nav a[aria-current="page"] { color: #a7a77e; }
 .menu-toggle { display: none; }
@@ -85,7 +85,7 @@ p { margin: 0 0 1em; }
   .nav { position: absolute; top: 100%; inset-inline: 0; background: var(--cream); border-bottom: 1px solid var(--line); display: none; }
   .nav-open .nav { display: block; }
   .nav ul { flex-direction: column; gap: 0; padding: 8px 16px 16px; }
-  .nav a { display: block; padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .nav a { display: flex; min-height: 52px; padding: 0; font-size: 1.3rem; border-bottom: 1px solid var(--line); }
 }
 
 /* Hero */
@@ -102,14 +102,16 @@ p { margin: 0 0 1em; }
   text-shadow: 0 1px 12px rgba(0, 0, 0, .18);
 }
 .hero-brand { font-family: var(--serif); font-size: clamp(2.2rem, 5vw, 3.6rem); margin: 0; letter-spacing: .04em; }
-.hero h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 400; margin: 0; letter-spacing: .03em; }
-.hero-sub { color: #fff; font-size: clamp(1.4rem, 3vw, 2rem); letter-spacing: .3em; margin: 0; text-shadow: 0 1px 12px rgba(0, 0, 0, .25); }
+.hero h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 400; margin: 0; }
+.hero-sub { color: #fff; font-size: clamp(1.4rem, 3vw, 2rem); margin: 0; text-shadow: 0 1px 12px rgba(0, 0, 0, .25); }
+.hero-tagline { color: #fff; font-size: clamp(1.15rem, 2.4vw, 1.5rem); font-weight: 300; margin: -16px 0 0; text-align: center; text-shadow: 0 1px 10px rgba(0, 0, 0, .35); }
 
 /* Intro */
 .intro { padding: 48px 0; }
 .intro-card { background: var(--paper); display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; padding: 48px; align-items: center; }
 .intro-text h2 { font-size: 2.2rem; font-weight: 400; }
 .intro-text .md { font-size: 1.2rem; color: var(--muted); }
+.intro-text .doctor-name { font-size: 1.6rem; margin: -.4em 0 .8em; }
 .intro-photo { margin: 0; }
 .intro-photo img { box-shadow: 0 10px 30px rgba(0, 0, 0, .15); border: 6px solid #fff; max-height: 520px; object-fit: cover; margin-inline: auto; }
 @media (max-width: 760px) {
@@ -161,7 +163,7 @@ p { margin: 0 0 1em; }
 .numbered-bg { background-size: cover; background-position: center; padding: 60px 0 70px; margin-top: 20px; }
 .numbered { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 .num-card { background: var(--paper); padding: 70px 28px 32px; position: relative; text-align: center; display: flex; flex-direction: column; align-items: center; }
-.num-card .num { position: absolute; top: -26px; width: 80px; height: 84px; border-radius: 50%; background: #c8c8c8; display: grid; place-items: center; font-size: 2.2rem; font-weight: 600; color: #444; }
+.num-card .num { position: absolute; top: -26px; width: 80px; height: 80px; border-radius: 50%; background: var(--cream); border: 1px solid var(--line); display: grid; place-items: center; color: var(--brown); }
 .num-card h3 { font-size: 1.4rem; font-weight: 400; }
 .num-card p { font-size: .98rem; color: var(--muted); flex: 1; }
 @media (max-width: 860px) { .numbered { grid-template-columns: 1fr; gap: 48px; max-width: 520px; margin-inline: auto; } }
@@ -258,3 +260,11 @@ p { margin: 0 0 1em; }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* Mockup additions */
+.review-links { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.btn-google { background: #fff; color: var(--ink); border-color: var(--line); display: inline-flex; align-items: center; gap: 8px; }
+.btn-google:hover { border-color: var(--ink); }
+.before-after-note { font-weight: 600; color: var(--brown-dark); }
+/* <picture> wrappers must not change layout */
+picture { display: contents; }

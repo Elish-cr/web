@@ -9,6 +9,7 @@ permalink: /testimonials/
   <div class="testimonials-bg" style="background-image:url('/images/bg-testimonials.jpg')"></div>
   <div class="wrap page">
     <h1 class="page-title">הלקוחות מספרים</h1>
+    <p class="center-text"><a class="btn btn-google" href="{{ site.googleReviews }}" target="_blank" rel="noopener">לכל הביקורות שלנו בגוגל</a></p>
     <p class="lead center-text">קראו חוות דעת של מטופלים ומטופלות מרוצים</p>
     <div class="t-grid">
       {%- for r in testimonials.all %}
@@ -20,8 +21,8 @@ permalink: /testimonials/
       {%- endfor %}
     </div>
     <div class="review-shots">
-      <img src="/images/review-1.jpg" alt="ביקורת בגוגל על ד״ר אלי שזיפי" loading="lazy">
-      <img src="/images/review-2.jpg" alt="ביקורת בגוגל על ד״ר אלי שזיפי" loading="lazy">
+      {% picture "/images/review-1.jpg", "ביקורת בגוגל על ד״ר אלי שזיפי", "(max-width: 760px) 100vw, 540px", 'loading="lazy"' %}
+      {% picture "/images/review-2.jpg", "ביקורת בגוגל על ד״ר אלי שזיפי", "(max-width: 760px) 100vw, 540px", 'loading="lazy"' %}
     </div>
   </div>
 </section>

@@ -43,12 +43,12 @@
   <a class="skip" href="#main">דילוג לתוכן</a>
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="btn btn-peach header-book" href="{{ site.bookingHeader }}" target="_blank" rel="noopener">קביעת טיפול</a>
+      <a class="btn btn-peach header-book" href="{{ site.booking }}" target="_blank" rel="noopener">קביעת טיפול</a>
       <button class="menu-toggle" aria-expanded="false" aria-controls="nav" aria-label="תפריט">
         <span></span><span></span><span></span>
       </button>
       <nav id="nav" class="nav" aria-label="ניווט ראשי">
-        {%- set links = [["/", "בית"], ["/about/", "אודות"], ["/treatments/", "טיפולים"], ["/blog/", "מאמרים"], ["/testimonials/", "לקוחות מספרים"]] %}
+        {%- set links = [["/", "בית"], ["/about/", "אודות"], ["/treatments/", "טיפולים ותוצאות"], ["/blog/", "מאמרים"], ["/testimonials/", "לקוחות מספרים"]] %}
         <ul>
           {%- for l in links %}
           <li><a href="{{ l[0] }}"{% if page.url == l[0] or (l[0] != "/" and page.url.startsWith(l[0])) %} aria-current="page"{% endif %}>{{ l[1] }}</a></li>
@@ -56,7 +56,7 @@
         </ul>
       </nav>
       <a class="logo" href="/" aria-label="{{ site.name }} - דף הבית">
-        <img src="/images/logo.png" alt="Trail of Silk - Dr. Eli Shezifi" width="92" height="82">
+        {% picture "/images/logo.png", "Trail of Silk - Dr. Eli Shezifi", "(max-width: 860px) 70px, 92px", 'width="92" height="82"' %}
       </a>
     </div>
   </header>

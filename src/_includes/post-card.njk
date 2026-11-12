@@ -1,7 +1,7 @@
 <article class="post-card">
   <a href="{{ post.url }}">
     {%- if post.data.image %}
-    <img src="{{ post.data.image }}" alt="" loading="lazy">
+    {% picture post.data.image, post.data.imageAlt, "(max-width: 860px) 100vw, 360px", 'loading="lazy"' %}
     {%- else %}
     <div class="post-card-blank" aria-hidden="true"></div>
     {%- endif %}

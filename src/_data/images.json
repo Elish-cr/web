@@ -1,0 +1,339 @@
+{
+ "/images/blog/biostimulators.jpg": {
+  "width": 928,
+  "height": 1152,
+  "webp": [
+   480,
+   928
+  ]
+ },
+ "/images/blog/botox.jpg": {
+  "width": 768,
+  "height": 1376,
+  "webp": [
+   480,
+   768
+  ]
+ },
+ "/images/blog/hyperhidrosis.jpg": {
+  "width": 1205,
+  "height": 1600,
+  "webp": [
+   480,
+   960,
+   1205
+  ]
+ },
+ "/images/blog/lips.jpg": {
+  "width": 1600,
+  "height": 1067,
+  "webp": [
+   480,
+   960,
+   1600
+  ]
+ },
+ "/images/blog/ozempic-face.jpg": {
+  "width": 1408,
+  "height": 768,
+  "webp": [
+   480,
+   960,
+   1408
+  ]
+ },
+ "/images/blog/pdrn.jpg": {
+  "width": 1408,
+  "height": 768,
+  "webp": [
+   480,
+   960,
+   1408
+  ]
+ },
+ "/images/blog/skinimalism.jpg": {
+  "width": 768,
+  "height": 1376,
+  "webp": [
+   480,
+   768
+  ]
+ },
+ "/images/botox/1.jpg": {
+  "width": 900,
+  "height": 1600,
+  "webp": [
+   480,
+   900
+  ]
+ },
+ "/images/botox/2.jpg": {
+  "width": 900,
+  "height": 1600,
+  "webp": [
+   480,
+   900
+  ]
+ },
+ "/images/botox/3.jpg": {
+  "width": 900,
+  "height": 1600,
+  "webp": [
+   480,
+   900
+  ]
+ },
+ "/images/botox/4.jpg": {
+  "width": 900,
+  "height": 1600,
+  "webp": [
+   480,
+   900
+  ]
+ },
+ "/images/botox/5.jpg": {
+  "width": 900,
+  "height": 1600,
+  "webp": [
+   480,
+   900
+  ]
+ },
+ "/images/botox/cover.jpg": {
+  "width": 1600,
+  "height": 1067,
+  "webp": [
+   480,
+   960,
+   1600
+  ]
+ },
+ "/images/doctor-arms-crossed.jpg": {
+  "width": 832,
+  "height": 1253,
+  "webp": [
+   480,
+   832
+  ]
+ },
+ "/images/doctor-portrait.jpg": {
+  "width": 768,
+  "height": 1366,
+  "webp": [
+   480,
+   768
+  ]
+ },
+ "/images/doctor-smile.jpg": {
+  "width": 899,
+  "height": 1600,
+  "webp": [
+   480,
+   899
+  ]
+ },
+ "/images/eyes/1.jpg": {
+  "width": 900,
+  "height": 1600,
+  "webp": [
+   480,
+   900
+  ]
+ },
+ "/images/eyes/cover.jpg": {
+  "width": 1600,
+  "height": 958,
+  "webp": [
+   480,
+   960,
+   1600
+  ]
+ },
+ "/images/hyaluronic/1.jpg": {
+  "width": 900,
+  "height": 1600,
+  "webp": [
+   480,
+   900
+  ]
+ },
+ "/images/hyaluronic/2.jpg": {
+  "width": 750,
+  "height": 1350,
+  "webp": [
+   480,
+   750
+  ]
+ },
+ "/images/hyaluronic/3.jpg": {
+  "width": 899,
+  "height": 1599,
+  "webp": [
+   480,
+   899
+  ]
+ },
+ "/images/hyaluronic/4.jpg": {
+  "width": 900,
+  "height": 1600,
+  "webp": [
+   480,
+   900
+  ]
+ },
+ "/images/hyaluronic/5.jpg": {
+  "width": 750,
+  "height": 1350,
+  "webp": [
+   480,
+   750
+  ]
+ },
+ "/images/hyaluronic/6.jpg": {
+  "width": 750,
+  "height": 1350,
+  "webp": [
+   480,
+   750
+  ]
+ },
+ "/images/hyaluronic/cover.jpg": {
+  "width": 1600,
+  "height": 1067,
+  "webp": [
+   480,
+   960,
+   1600
+  ]
+ },
+ "/images/lips/1.jpg": {
+  "width": 900,
+  "height": 1600,
+  "webp": [
+   480,
+   900
+  ]
+ },
+ "/images/lips/2.jpg": {
+  "width": 900,
+  "height": 1600,
+  "webp": [
+   480,
+   900
+  ]
+ },
+ "/images/lips/3.jpg": {
+  "width": 1080,
+  "height": 1350,
+  "webp": [
+   480,
+   960,
+   1080
+  ]
+ },
+ "/images/lips/4.jpg": {
+  "width": 1080,
+  "height": 1080,
+  "webp": [
+   480,
+   960,
+   1080
+  ]
+ },
+ "/images/lips/5.jpg": {
+  "width": 1280,
+  "height": 1600,
+  "webp": [
+   480,
+   960,
+   1280
+  ]
+ },
+ "/images/lips/cover.jpg": {
+  "width": 1600,
+  "height": 1067,
+  "webp": [
+   480,
+   960,
+   1600
+  ]
+ },
+ "/images/logo.png": {
+  "width": 600,
+  "height": 533,
+  "webp": [
+   184,
+   276
+  ]
+ },
+ "/images/nose/1.jpg": {
+  "width": 900,
+  "height": 1600,
+  "webp": [
+   480,
+   900
+  ]
+ },
+ "/images/nose/2.jpg": {
+  "width": 900,
+  "height": 1028,
+  "webp": [
+   480,
+   900
+  ]
+ },
+ "/images/nose/cover.jpg": {
+  "width": 1600,
+  "height": 1200,
+  "webp": [
+   480,
+   960,
+   1600
+  ]
+ },
+ "/images/review-1.jpg": {
+  "width": 1080,
+  "height": 503,
+  "webp": [
+   480,
+   960,
+   1080
+  ]
+ },
+ "/images/review-2.jpg": {
+  "width": 1080,
+  "height": 568,
+  "webp": [
+   480,
+   960,
+   1080
+  ]
+ },
+ "/images/skin/1.jpg": {
+  "width": 1080,
+  "height": 1350,
+  "webp": [
+   480,
+   960,
+   1080
+  ]
+ },
+ "/images/skin/2.jpg": {
+  "width": 1080,
+  "height": 1350,
+  "webp": [
+   480,
+   960,
+   1080
+  ]
+ },
+ "/images/skin/cover.jpg": {
+  "width": 1600,
+  "height": 1600,
+  "webp": [
+   480,
+   960,
+   1600
+  ]
+ }
+}
