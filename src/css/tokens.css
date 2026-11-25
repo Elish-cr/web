@@ -1,0 +1,77 @@
+:root {
+  color-scheme: light;
+  --space-3xs: 2px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 144px;
+  --text-xs: 0.8125rem; --text-sm: 0.875rem; --text-md: 1rem; --text-lg: 1.25rem; --text-xl: 1.5625rem; --text-2xl: 1.953rem; --text-3xl: 2.441rem;
+  --text-display-s: clamp(2.25rem, 4.2vw + 0.25rem, 4.25rem); --text-display: clamp(3.25rem, 6.6vw, 6.75rem); --text-page: clamp(2.75rem, 4.6vw, 4.75rem);
+  --text-section: clamp(2.25rem, 3.3vw + 0.75rem, 4.25rem); --text-nav: 1.1875rem; --text-title: clamp(1.25rem, 0.75vw + 0.875rem, 1.625rem); --text-lead: clamp(1.125rem, 0.35vw + 1rem, 1.375rem);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); --ease-in: cubic-bezier(0.7, 0, 0.84, 0); --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms; --dur-short: 220ms; --dur-long: 420ms;
+  --color-error: #be2323; --color-success: #21763c;
+  --container: 1440px; --gutter: 64px; --gap-columns: 32px; --section-gap-s: 120px; --section-gap: 144px; --section-gap-l: 176px;
+  --z-base: 1; --z-raised: 10; --z-dropdown: 100; --z-sticky: 200; --z-sticky-nav: 300; --z-modal: 400; --z-toast: 500; --z-tooltip: 600;
+  --color-paper: #f1ece6; --color-paper-2: #e9e3db; --color-paper-3: #ded6cd;
+  --color-ink: #1c110a; --color-ink-2: #382e28; --color-muted: #615953;
+  --color-rule: #c6c0b9;
+  --color-accent: var(--red); --color-accent-ink: var(--cream); --color-focus: var(--green-2);
+  --green: #0a3528; --green-2: #1a4737; --gold: #ae8d49; --gold-deep: #89692c; --gold-pale: #e2cc95; --red: #842027; --cream: #f4efe7; --cast: rgba(0, 18, 10, 0.5); --gold-line: rgba(174, 141, 73, 0.6); --ink-cast: rgba(28, 17, 10, 0.2);
+  --color-card: #f9f7f2; --color-card-edge: #d6d0c9; --color-pencil: #6d6863;
+  --card-lit: #fcf9f5; --card-shade: #f6f3ed; --lit: rgba(255, 254, 251, 0.9);
+  --stain-1: #c98b90; --stain-2: #869a77; --stain-3: #a4744f; --stain-4: #78a1a6;
+  --font-display: "Fredoka", "Arial Hebrew", Arial, sans-serif; --font-body: "Assistant", "Arial Hebrew", Arial, sans-serif;
+  --font-outlier: var(--font-body);
+  --radius-card: 0; --radius-pill: 3px; --rule-hair: 1px; --rule-head: 1px;
+  --shadow-card: 0 0 0 1px rgba(58, 42, 31, 0.05), 0.5px 1px 1px rgba(58, 42, 31, 0.08), 3px 8px 14px -6px rgba(58, 42, 31, 0.14), 14px 36px 64px -28px rgba(58, 42, 31, 0.3);
+  --tracking-display: -0.01em; --tracking-statement: -0.01em; --display-weight: 400; --statement-weight: 300; --serif-small: 400;
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.15' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.28  0 0 0 0 0.22  0 0 0 0 0.16  0 0 0 0.5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");
+  --fibre: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.28  0 0 0 0 0.22  0 0 0 0 0.16  0 0 0 0.14 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");
+  --header-height: 116px;
+  --pressed: 0 1px 0 var(--lit);
+  --brass-0: #f2e1ac; --brass-1: #dcc17f; --brass-2: #c1a057; --brass-3: #9b7b3c; --brass-4: #775b2b;
+  --engraved: #4c391d; --engraved-lit: #ecdeb1;
+  --steel-0: #faf8f5; --steel-1: #bfbdb9; --steel-2: #605d59;
+}
+/* The exact colours, for browsers that know oklch; the values above are the same colours for older ones */
+@supports (color: oklch(50% 0.1 20)) {
+  :root {
+    --color-error: oklch(52% 0.19 27);
+    --color-success: oklch(50% 0.12 150);
+    --color-paper: oklch(94.5% 0.010 76);
+    --color-paper-2: oklch(91.8% 0.013 74);
+    --color-paper-3: oklch(88% 0.015 72);
+    --color-ink: oklch(19% 0.024 52);
+    --color-ink-2: oklch(31% 0.018 54);
+    --color-muted: oklch(47% 0.014 60);
+    --color-rule: oklch(81% 0.011 70);
+    --green: oklch(29.5% 0.052 168);
+    --green-2: oklch(36% 0.056 168);
+    --gold: oklch(66% 0.095 84);
+    --gold-deep: oklch(54% 0.088 80);
+    --gold-pale: oklch(85% 0.075 88);
+    --red: oklch(41% 0.135 22);
+    --cream: oklch(95.5% 0.012 80);
+    --cast: oklch(16% 0.04 168 / 0.5);
+    --gold-line: oklch(66% 0.095 84 / 0.6);
+    --ink-cast: oklch(19% 0.024 52 / 0.2);
+    --color-card: oklch(97.6% 0.007 82);
+    --color-card-edge: oklch(86% 0.012 72);
+    --color-pencil: oklch(52% 0.010 62);
+    --card-lit: oklch(98.4% 0.006 84);
+    --card-shade: oklch(96.4% 0.008 78);
+    --lit: oklch(99.6% 0.004 85 / 0.9);
+    --stain-1: oklch(70% 0.075 14);
+    --stain-2: oklch(66% 0.055 132);
+    --stain-3: oklch(60% 0.080 58);
+    --stain-4: oklch(68% 0.045 206);
+    --shadow-card: 0 0 0 1px oklch(30% 0.03 55 / 0.05), 0.5px 1px 1px oklch(30% 0.03 55 / 0.08), 3px 8px 14px -6px oklch(30% 0.03 55 / 0.14), 14px 36px 64px -28px oklch(30% 0.03 55 / 0.3);
+    --brass-0: oklch(91% 0.070 92);
+    --brass-1: oklch(82% 0.090 88);
+    --brass-2: oklch(72% 0.100 85);
+    --brass-3: oklch(60% 0.090 82);
+    --brass-4: oklch(49% 0.075 80);
+    --engraved: oklch(36% 0.050 76);
+    --engraved-lit: oklch(90% 0.060 92);
+    --steel-0: oklch(98% 0.004 85);
+    --steel-1: oklch(80% 0.006 85);
+    --steel-2: oklch(48% 0.008 80);
+  }
+}

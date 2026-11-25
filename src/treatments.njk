@@ -1,22 +1,27 @@
 ---
-layout: base.njk
+layout: atelier.njk
+seoTitle: "טיפולים אסתטיים בראש העין – ד״ר אלי שזיפי"
+metaDescription: "שישה סוגי טיפולים בקליניקה בראש העין: בוטוקס, שקעי עיניים, חומצה היאלורונית, איכות עור, פיסול אף ושפתיים."
 title: טיפולים ותוצאות
 description: טיפולי בוטוקס, חומצה היאלורונית, שפתיים, פיסול אף, שקעי עיניים ואיכות עור בקליניקה של ד״ר אלי שזיפי בראש העין.
 permalink: /treatments/
 ---
-<section class="wrap page">
-  <h1 class="page-title">טיפולים ותוצאות</h1>
-  <div class="narrow center-text">
+<section class="head">
+  <div class="head-text">
+    <h1>טיפולים ותוצאות</h1>
     <p class="lead">כאן ניתן למצוא חלק ממגוון הטיפולים המוצע בקליניקה</p>
-    <p>מטיפולים ותיקים כמו בוטוקס ועד הטיפולים החדשניים ביותר בתחום - התאמה אישית כדי להביא אותך לתוצאה האידיאלית.</p>
-    <p class="before-after-note">תמונות לפני ואחרי מופיעות בעמוד של כל טיפול. לחצו על הטיפול שמעניין אתכם כדי לראות אותן.</p>
-    <p class="disclaimer">יש לזכור כי התוצאות הן אישיות ולא ניתן להבטיח תוצאות זהות בין מטופלים.</p>
+    <p>מטיפולים ותיקים כמו בוטוקס ועד הטיפולים החדשניים ביותר בתחום – התאמה אישית כדי להביא אותך לתוצאה האידיאלית.</p>
+    <p>תמונות לפני ואחרי מופיעות בעמוד של כל טיפול. לחצו על הטיפול שמעניין אתכם כדי לראות אותן.</p>
+    <p class="small">יש לזכור כי התוצאות הן אישיות ולא ניתן להבטיח תוצאות זהות בין מטופלים.</p>
   </div>
-  <div class="treat-grid">
+  <div class="head-field"><div class="head-caliper">{% include "caliper.njk" %}</div></div>
+</section>
+<section class="section" aria-label="טיפולים ותוצאות">
+  <div class="container treat-grid">
     {%- for t in collections.treatments %}
-    <a class="treat-card" href="{{ t.url }}">
-      {% picture "/images/" + t.data.slug + "/cover.jpg", "", "(max-width: 520px) 100vw, (max-width: 860px) 50vw, 360px", 'loading="lazy"' %}
-      <span>{{ t.data.title }}</span>
+    <a class="treat" href="{{ t.url }}">
+      <span class="treat-photo">{% picture "/images/" + t.data.slug + "/cover.jpg", "", "(max-width: 640px) 100vw, 840px", 'loading="lazy"' %}</span>
+      <span class="treat-name">{{ t.data.title }}</span>
     </a>
     {%- endfor %}
   </div>

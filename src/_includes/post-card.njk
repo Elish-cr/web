@@ -1,12 +1,10 @@
-<article class="post-card">
+<article class="post-card{% if not post.data.image %} post-card-plain{% endif %}">
   <a href="{{ post.url }}">
     {%- if post.data.image %}
-    {% picture post.data.image, post.data.imageAlt or post.data.title, "(max-width: 860px) 100vw, 360px", 'loading="lazy"' %}
-    {%- else %}
-    <div class="post-card-blank" aria-hidden="true"></div>
+    <div class="post-card-photo">{% picture post.data.image, post.data.imageAlt or post.data.title, "(max-width: 640px) 100vw, 640px", 'loading="lazy"' + (' class="crop-top"' if post.data.imageCrop == "top" else "") %}</div>
     {%- endif %}
     <div class="post-card-body">
-      <h3>{{ post.data.title }}</h3>
+      <h2>{{ post.data.title }}</h2>
       <p>{{ post.data.description | excerpt(120) }}</p>
     </div>
   </a>

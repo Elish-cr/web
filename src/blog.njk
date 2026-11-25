@@ -1,14 +1,27 @@
 ---
-layout: base.njk
+layout: atelier.njk
 title: מאמרים
 description: מאמרים של ד״ר אלי שזיפי על בוטוקס, חומצה היאלורונית, איכות עור וטיפולים אסתטיים.
 permalink: /blog/
 ---
-<section class="wrap page">
-  <h1 class="page-title">מאמרים ופוסטים</h1>
-  <div class="post-grid">
-    {%- for post in collections.posts %}
+{%- set newest = collections.posts[0] -%}
+<section class="head">
+  <div class="head-text">
+    <h1>מאמרים ופוסטים</h1>
+  </div>
+  <div class="head-field">
+    <article class="field-post">
+      <a href="{{ newest.url }}">
+        <h2>{{ newest.data.title }}</h2>
+        <p>{{ newest.data.description | excerpt(120) }}</p>
+      </a>
+    </article>
+  </div>
+</section>
+<section class="section" aria-label="מאמרים ופוסטים">
+  <div class="container post-grid">
+    {%- for post in collections.posts %}{% if not loop.first %}
     {% include "post-card.njk" %}
-    {%- endfor %}
+    {%- endif %}{% endfor %}
   </div>
 </section>

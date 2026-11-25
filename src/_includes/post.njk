@@ -1,20 +1,38 @@
 ---
-layout: base.njk
+layout: atelier.njk
 ---
-<article class="wrap article">
-  <p class="crumbs"><a href="/blog/">מאמרים</a></p>
-  <header>
-    <h1>{{ title }}</h1>
-    <p class="meta">{{ site.doctor }} · <time datetime="{{ page.date | isoDate }}">{{ page.date | heDate }}</time></p>
+<article>
+  <header class="head head-article{% if not image %} head-band{% endif %}">
+    <div class="head-text">
+      <p class="crumbs"><a class="link" href="/blog/">מאמרים</a></p>
+      <h1>{{ title }}</h1>
+      <p class="byline"><a class="author" href="/about/">{{ site.doctor }}, {{ site.jobTitle }}</a> <time datetime="{{ page.date | isoDate }}">{{ page.date | heDate }}</time></p>
+    </div>
+    {%- if image %}
+    <div class="head-field">
+      <div class="print stock print-article">{% picture image, imageAlt or title, "(max-width: 960px) 100vw, 520px", 'fetchpriority="high"' %}</div>
+    </div>
+    {%- endif %}
   </header>
-  {%- if image %}
-  {% picture image, imageAlt or title, "(max-width: 1120px) 100vw, 1120px", 'class="article-hero"' %}
-  {%- endif %}
-  <div class="prose">
-    {{ content | safe }}
+  <div class="container reading">
+    <div class="prose">
+      {{ content | safe }}
+    </div>
+    <div class="reading-side">
+    <p class="reading-actions">
+      <a class="btn" href="{{ site.booking }}" target="_blank" rel="noopener">קביעת טיפול</a>
+      <a class="btn btn-quiet" href="{{ site.whatsapp }}" target="_blank" rel="noopener">שאלה בוואטסאפ</a>
+    </p>
+    {%- if relatedTreatments %}
+    <aside class="related" aria-labelledby="related-title">
+      <h3 id="related-title">הטיפולים בקליניקה</h3>
+      <ul>
+        {%- for t in collections.treatments %}{% if t.data.slug in relatedTreatments %}
+        <li><a href="{{ t.url }}"><span>{{ t.data.title }}</span></a></li>
+        {%- endif %}{% endfor %}
+      </ul>
+    </aside>
+    {%- endif %}
+    </div>
   </div>
-  <p class="article-cta">
-    <a class="btn btn-brown" href="{{ site.booking }}" target="_blank" rel="noopener">קביעת טיפול</a>
-    <a class="btn btn-light" href="{{ site.whatsapp }}" target="_blank" rel="noopener">שאלה בוואטסאפ</a>
-  </p>
 </article>

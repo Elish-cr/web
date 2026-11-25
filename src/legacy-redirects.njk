@@ -14,7 +14,6 @@ eleventyExcludeFromCollections: true
 <head>
   <meta charset="utf-8">
   <title>הדף עבר</title>
-  <meta name="robots" content="noindex">
   <link rel="canonical" href="{{ site.url }}{{ r.to }}">
   <meta http-equiv="refresh" content="0; url={{ r.to }}">
   <script>location.replace({{ r.to | dump | safe }});</script>

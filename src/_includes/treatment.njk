@@ -1,32 +1,56 @@
 ---
-layout: base.njk
+layout: atelier.njk
 ---
-<section class="wrap page treatment">
-  <p class="crumbs"><a href="/treatments/">טיפולים ותוצאות</a></p>
-  <div class="treatment-head">
-    <div>
-      <h1 class="page-title">{{ title }}</h1>
-      <p class="lead">{{ summary }}</p>
-      {{ content | safe }}
-      <p><a class="btn btn-brown" href="{{ site.booking }}" target="_blank" rel="noopener">קביעת טיפול</a></p>
-    </div>
-    {% picture "/images/" + slug + "/cover.jpg", title, "(max-width: 760px) 100vw, 520px", 'class="treatment-cover"' %}
+<section class="head">
+  <div class="head-text">
+    <p class="crumbs"><a class="link" href="/treatments/">טיפולים ותוצאות</a></p>
+    <h1>{{ title }}</h1>
+    <p class="lead">{{ summary }}</p>
+    {{ content | safe }}
+    <p class="actions"><a class="btn" href="{{ site.booking }}" target="_blank" rel="noopener">קביעת טיפול</a></p>
   </div>
-
-  <h2 class="gallery-title">לפני ואחרי</h2>
-  <div class="gallery">
-    {%- for i in range(1, photos + 1) %}
-    <a href="/images/{{ slug }}/{{ i }}.jpg" target="_blank" rel="noopener">
-      {% picture "/images/" + slug + "/" + i + ".jpg", title + " - תמונה " + i + " לפני ואחרי", "(max-width: 520px) 100vw, 280px", 'loading="lazy"' %}
-    </a>
-    {%- endfor %}
+  <div class="head-field">
+    <div class="print stock print-cover cover-{{ slug }}">{% picture "/images/" + slug + "/cover.jpg", title, "(max-width: 960px) 100vw, 520px", 'fetchpriority="high"' %}</div>
   </div>
-  <p class="disclaimer">יש לזכור כי התוצאות הן אישיות ולא ניתן להבטיח תוצאות זהות בין מטופלים.</p>
-
-  {%- set list = collections.treatments %}
-  <nav class="prev-next" aria-label="טיפולים נוספים">
-    {%- for t in list %}{% if t.url != page.url %}
-    <a href="{{ t.url }}">{{ t.data.title }}</a>
-    {%- endif %}{% endfor %}
-  </nav>
 </section>
+
+<section class="section results" aria-labelledby="results-title">
+  <div class="container results-grid">
+    <h2 id="results-title">לפני ואחרי</h2>
+    <div class="gallery gallery-{{ photos }}">
+      {%- for i in range(1, photos + 1) %}
+      <a class="stock shot" href="/images/{{ slug }}/{{ i }}.jpg" target="_blank" rel="noopener">
+        {% picture "/images/" + slug + "/" + i + ".jpg", title + " – תמונה " + i + " לפני ואחרי", "(max-width: 640px) 100vw, 400px", 'loading="lazy"' %}
+      </a>
+      {%- endfor %}
+    </div>
+    <div class="results-side">
+      <p class="small">יש לזכור כי התוצאות הן אישיות ולא ניתן להבטיח תוצאות זהות בין מטופלים.</p>
+      {%- set found = false %}
+      {%- for p in collections.posts %}{% if slug in (p.data.relatedTreatments or []) %}
+      {%- if not found %}
+      {%- set found = true %}
+      <aside class="related" aria-labelledby="related-title">
+        <h3 id="related-title">מאמרים בנושא</h3>
+        <ul>
+      {%- endif %}
+          <li><a href="{{ p.url }}"><span>{{ p.data.title }}</span></a></li>
+      {%- endif %}{% endfor %}
+      {%- if found %}
+        </ul>
+      </aside>
+      {%- endif %}
+    </div>
+  </div>
+</section>
+
+<nav class="others" aria-labelledby="others-title">
+  <div class="container">
+    <h2 id="others-title">טיפולים נוספים</h2>
+    <ul>
+      {%- for t in collections.treatments %}{% if t.url != page.url %}
+      <li><a href="{{ t.url }}">{{ t.data.title }}</a></li>
+      {%- endif %}{% endfor %}
+    </ul>
+  </div>
+</nav>

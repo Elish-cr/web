@@ -1,99 +1,128 @@
 ---
-layout: base.njk
+layout: atelier.njk
+seoTitle: "רפואה אסתטית בראש העין – ד״ר אלי שזיפי, Trail of Silk"
+metaDescription: "הקליניקה של ד״ר אלי שזיפי ברחוב חיים הרצוג 29 בראש העין: בוטוקס, חומצה היאלורונית, שפתיים, שקעי עיניים, פיסול אף ואיכות עור."
 title: בית
+homeCards:
+  skin:
+    title: "טיפולי איכות עור"
+    text: "ברוכים הבאים לעולם טיפולי העור המתקדמים! אני מציע מגוון רחב של טיפולים, כולל לייזר, פילינג רפואי, טיפולים ביוסטימולטורים ומזותרפיה רפואית, שמטרתם להשיג עור צעיר ובריא יותר. הטיפולים מותאמים אישית למאפייני הגיל ומרקם העור, כך שתוכלו ליהנות מעור רענן מבלי לשנות נפח או מבנה פנים."
+  hyaluronic:
+    title: "חומצה היאלורונית"
+    text: "חידוד קו הלסת, עיצוב הסנטר, תיקון פרופורציות ואסימטריה בפנים, מילוי עצמות לחיים, החזרת נפח לאחר ירידה משמעותית במשקל, טיפול ברקות ועוד מגוון רחב של טיפולים באמצעות חומצה היאלורונית. מטרת טיפולים אלו היא לספק מראה חיוני, צעיר וטבעי לחלוטין."
+  botox:
+    title: "בוטוקס"
+    text: "בוטוקס הוא טיפול פופולרי ומקצועי שמעניק תוצאות מרשימות. באמצעות טכניקות נכונות, ניתן להפחית קמטים ולהשיג מראה צעיר ורענן. בואו לגלות את היופי שבכם מחדש!"
 ---
 {%- from "icons.njk" import icon -%}
 <section class="hero">
-  <div class="hero-bg" style="background-image:url('/images/clinic-room.jpg')"></div>
-  <div class="hero-box">
-    <p class="hero-brand" lang="en" dir="ltr">Trail of Silk</p>
-    <h1>{{ site.doctor }}</h1>
+  <canvas class="air" aria-hidden="true"></canvas>
+  <div class="container hero-grid">
+    <div class="opening">
+      <h1>{{ site.doctor }}</h1>
+      <p class="lead"><span class="hero-role">{{ site.jobTitle }}</span> <span class="hero-sub">רפואה אסתטית בראש העין</span> <span class="hero-tagline">טיפול מדויק למראה טבעי וזוהר</span></p>
+      <p class="hero-actions">
+        <a class="btn" href="{{ site.booking }}" target="_blank" rel="noopener">קביעת טיפול</a>
+        <a class="link" href="/treatments/">טיפולים ותוצאות</a>
+      </p>
+    </div>
+    <div class="hero-caliper">{% include "caliper.njk" %}</div>
+    <figure class="hero-print stock">
+      {% picture "/images/doctor-arms-crossed.jpg", site.doctor + " בקליניקה", "(max-width: 960px) 80vw, 440px", 'width="832" height="1253" fetchpriority="high"' %}
+      <figcaption><span lang="en" dir="ltr">Trail of Silk</span><span>{{ site.city }}</span></figcaption>
+    </figure>
   </div>
-  <p class="hero-sub">רפואה אסתטית בראש העין</p>
-  <p class="hero-tagline">טיפול מדויק למראה טבעי וזוהר</p>
 </section>
 
-<section class="intro">
-  <div class="wrap intro-card">
-    <div class="intro-text">
-      <h2>קליניקה לרפואה אסתטית בראש העין</h2>
+<section class="treatments" id="treatments" aria-labelledby="treatments-title">
+  <div class="container">
+    <div class="split-head">
+      <h2 id="treatments-title">הטיפולים בקליניקה</h2>
+      <div class="split-copy">
+        <p>בקליניקה שלי תוכלו למצוא מגוון רחב של טיפולים, החל מטיפולים קלאסיים כמו בוטוקס ועד טיפולים חדשניים עם טכנולוגיה מתקדמת. המטרה היא להשיג עור צעיר ובריא מבפנים, מבלי לשנות את זהותך. לאחר ייעוץ אישי, אתאים לך תוכנית טיפול מותאמת עבורך שתכלול את הטיפולים הנכונים כדי שתגיע למראה המבוקש.</p>
+        <p>בין הטיפולים ניתן למצוא:</p>
+      </div>
+    </div>
+    <div class="choice" data-choice>
+      <div class="gauge">
+      <ul class="rail" aria-label="הטיפולים בקליניקה">
+        {%- for t in collections.treatments %}
+        <li><a class="strip" href="#t-{{ t.data.slug }}" id="tab-{{ t.data.slug }}"><span>{{ homeCards[t.data.slug].title or t.data.title }}</span></a></li>
+        {%- endfor %}
+      </ul>
+      <div class="gauge-well">{% include "gauge.njk" %}</div>
+      </div>
+      <div class="panels">
+        {%- for t in collections.treatments %}
+        {%- set card = homeCards[t.data.slug] %}
+        <article class="panel" id="t-{{ t.data.slug }}">
+          <div class="panel-photo">{% picture "/images/" + t.data.slug + "/cover.jpg", "", "(max-width: 960px) 100vw, 640px", 'loading="lazy"' %}</div>
+          <div class="panel-label">
+            <h3>{{ card.title or t.data.title }}</h3>
+            <div>
+              <p>{{ card.text or t.data.summary }}</p>
+              <p><a class="link" href="{{ t.url }}" aria-label="עוד מידע: {{ card.title or t.data.title }}">עוד מידע</a></p>
+            </div>
+          </div>
+        </article>
+        {%- endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="intro" aria-labelledby="intro-title">
+  <div class="container intro-grid">
+    <h2 id="intro-title">קליניקה לרפואה אסתטית בראש העין</h2>
+    <p class="statement">אני מאמין שכל מטופל ומטופלת ראויים לתוצאה שנראית טבעית, מרגישה נכונה ומשפרת את הביטחון העצמי, מבלי לשנות את מי שאתם באמת.</p>
+    <div class="intro-copy">
       <p class="lead">ברוכים הבאים!</p>
-      <p>אני ד"ר אלי שזיפי (MD), מתמחה ברפואת משפחה ורופא לאסתטיקה בעל ניסיון רפואי רחב שמחבר בין עולמות רפואיים ואסתטיים.</p>
+      <p>אני ד"ר אלי שזיפי (MD), רופא משפחה ואסתטיקה בעל ניסיון רפואי רחב שמחבר בין עולמות רפואיים ואסתטיים.</p>
       <p>אני שם דגש על מקצועיות, יחס אישי ותוצאות טבעיות, תוך הקפדה על שימוש בחומרים האיכותיים והבטוחים ביותר.</p>
-      <p>אני מאמין שכל מטופל ומטופלת ראויים לתוצאה שנראית טבעית, מרגישה נכונה ומשפרת את הביטחון העצמי, מבלי לשנות את מי שאתם באמת.</p>
-      <p>תוכלו לקבל במרפאתי את הטיפולים המתקדמים ביותר בתחום וכמובן - אווירה חמה, נינוחה, יחס אישי, מעקב וליווי לכל אורך התהליך עד השגת התוצאה האידיאלית.</p>
+    </div>
+    <div class="intro-copy">
+      <p>תוכלו לקבל במרפאתי את הטיפולים המתקדמים ביותר בתחום וכמובן – אווירה חמה, נינוחה, יחס אישי, מעקב וליווי לכל אורך התהליך עד השגת התוצאה האידיאלית.</p>
       <p>המרפאה שלי ממוקמת בראש העין.</p>
     </div>
-    <figure class="intro-photo">
-      {% picture "/images/doctor-arms-crossed.jpg", site.doctor + " בקליניקה", "(max-width: 760px) 100vw, 480px", 'width="832" height="1253"' %}
-    </figure>
   </div>
 </section>
 
-<section class="reviews-strip" aria-label="חוות דעת">
-  <div class="wrap reviews-grid">
-    {%- for r in testimonials.featured %}
-    <figure class="review-card">
-      <div class="stars" aria-label="5 כוכבים">{% for i in range(5) %}{{ icon("star", 26) }}{% endfor %}</div>
-      <figcaption>{{ r.name }} <span>{{ r.city }}</span></figcaption>
-      <blockquote>״{{ r.text }}״</blockquote>
-    </figure>
-    {%- endfor %}
-  </div>
-  <p class="center review-links"><a class="btn btn-brown" href="/testimonials/">לקריאת עוד חוות דעות</a>
-    <a class="btn btn-google" href="{{ site.googleReviews }}" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.8h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.3z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22z"/><path fill="#FBBC05" d="M6.4 14a6 6 0 0 1 0-4V7.4H3.1a10 10 0 0 0 0 9.2z"/><path fill="#EA4335" d="M12 5.9c1.5 0 2.8.5 3.8 1.5l2.9-2.9A10 10 0 0 0 3.1 7.4L6.4 10c.8-2.3 3-4.1 5.6-4.1z"/></svg>הביקורות שלנו בגוגל</a></p>
-</section>
-
-<section class="follow">
-  <div class="wrap">
-    <h2>עקבו ברשתות</h2>
-    <div class="social social-big">
-      <a href="{{ site.whatsapp }}" target="_blank" rel="noopener" aria-label="וואטסאפ" class="s-wa">{{ icon("whatsapp", 40) }}</a>
-      <a href="{{ site.instagram }}" target="_blank" rel="noopener" aria-label="אינסטגרם" class="s-ig">{{ icon("instagram", 40) }}</a>
-      <a href="{{ site.facebook }}" target="_blank" rel="noopener" aria-label="פייסבוק" class="s-fb">{{ icon("facebook", 40) }}</a>
-    </div>
-  </div>
-</section>
-
-<section class="posts-home">
-  <div class="posts-home-bg" style="background-image:url('/images/clinic-room-2.jpg')"></div>
-  <div class="wrap">
-    <h2 class="boxed-title">מאמרים ופוסטים</h2>
-    <div class="post-grid">
-      {%- for post in collections.posts | head(3) %}
-      {% include "post-card.njk" %}
+<section class="reviews" aria-label="חוות דעת">
+  <div class="container">
+    <div class="reviews-grid">
+      {%- for r in testimonials.featured %}
+      <figure class="review">
+        <div class="stars" role="img" aria-label="5 כוכבים">{% for i in range(5) %}{{ icon("star", 18) }}{% endfor %}</div>
+        <blockquote>״{{ r.text }}״</blockquote>
+        <figcaption>{{ r.name }} <span>{{ r.city }}</span></figcaption>
+      </figure>
       {%- endfor %}
     </div>
-    <p class="center"><a class="btn btn-light" href="/blog/">לכל המאמרים</a></p>
+    <p class="actions"><a class="btn btn-quiet" href="/testimonials/">לקריאת עוד חוות דעת</a>
+      <a class="link" href="{{ site.googleReviews }}" target="_blank" rel="noopener">הביקורות עליי בגוגל</a></p>
   </div>
 </section>
 
-<section class="treatments-home">
-  <div class="wrap narrow">
-    <h2>הטיפולים בקליניקה</h2>
-    <p>בקליניקה שלי תוכלו למצוא מגוון רחב של טיפולים, החל מטיפולים קלאסיים כמו בוטוקס ועד טיפולים חדשניים עם טכנולוגיה מתקדמת. המטרה היא להשיג עור צעיר ובריא מבפנים, מבלי לשנות את זהותך. לאחר ייעוץ אישי, נתאים לך תוכנית טיפול מותאמת עבורך שתכלול את הטיפולים הנכונים כדי שתגיע למראה המבוקש.</p>
-    <p>בין הטיפולים ניתן למצוא:</p>
-  </div>
-  <div class="numbered-bg" style="background-image:url('/images/bg-skin.jpg')">
-    <div class="wrap numbered">
-      <article class="num-card">
-        <span class="num"><svg width="40" height="40" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M18.5 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg></span>
-        <h3>טיפולי איכות עור</h3>
-        <p>ברוכים הבאים לעולם טיפולי העור המתקדמים! אני מציע מגוון רחב של טיפולים, כולל לייזר, פילינג רפואי, טיפולים ביוסטימולטורים ומזותרפיה רפואית, שמטרתם להשיג עור צעיר ובריא יותר. הטיפולים מותאמים אישית למאפייני הגיל ומרקם העור, כך שתוכלו ליהנות מעור רענן מבלי לשנות נפח או מבנה פנים.</p>
-        <a class="btn btn-brown" href="/treatments/skin/">עוד מידע</a>
+<section class="posts" aria-labelledby="posts-title">
+  <div class="container posts-grid">
+    <div class="posts-head">
+      <h2 id="posts-title">מאמרים ופוסטים</h2>
+      <p class="actions"><a class="link" href="/blog/">לכל המאמרים</a></p>
+    </div>
+    <div class="ruled">
+      {%- for post in collections.posts | head(3) %}
+      <article class="post-row{% if not post.data.image %} post-row-plain{% endif %}">
+        <a href="{{ post.url }}">
+          {%- if post.data.image %}
+          <div class="post-photo">{% picture post.data.image, post.data.imageAlt or post.data.title, "(max-width: 960px) 40vw, 240px", 'loading="lazy"' %}</div>
+          {%- endif %}
+          <div>
+            <h3>{{ post.data.title }}</h3>
+            <p>{{ post.data.description | excerpt(120) }}</p>
+          </div>
+        </a>
       </article>
-      <article class="num-card">
-        <span class="num"><svg width="40" height="40" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M12 3.5c3.2 4 5.5 7.2 5.5 10a5.5 5.5 0 0 1-11 0c0-2.8 2.3-6 5.5-10z"/><path d="M9.5 14.5a2.6 2.6 0 0 0 2.2 2.4" stroke-linecap="round"/></svg></span>
-        <h3>חומצה היאלורונית</h3>
-        <p>חידוד קו הלסת, עיצוב הסנטר, תיקון פרופורציות ואסימטריה בפנים, מילוי עצמות לחיים, החזרת נפח לאחר ירידה משמעותית במשקל, טיפול ברקות ועוד מגוון רחב של טיפולים באמצעות חומצה היאלורונית. מטרת טיפולים אלו היא לספק מראה חיוני, צעיר וטבעי לחלוטין.</p>
-        <a class="btn btn-brown" href="/treatments/hyaluronic/">עוד מידע</a>
-      </article>
-      <article class="num-card">
-        <span class="num"><svg width="40" height="40" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3l4 4M19 5l-3.5 3.5M14 6l4 4M15.5 8.5l-8 8-3-3 8-8M6 15l-3 3M8 12.5l1.5 1.5M10 10.5l1.5 1.5"/></svg></span>
-        <h3>בוטוקס</h3>
-        <p>בוטוקס הוא טיפול פופולרי ומקצועי שמעניק תוצאות מידיות ומרשימות. באמצעות טכניקות נכונות, ניתן להפחית קמטים ולהשיג מראה צעיר ורענן. בואו לגלות את היופי שבכם מחדש!</p>
-        <a class="btn btn-brown" href="/treatments/botox/">עוד מידע</a>
-      </article>
+      {%- endfor %}
     </div>
   </div>
 </section>

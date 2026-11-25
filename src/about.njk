@@ -1,20 +1,31 @@
 ---
-layout: base.njk
+layout: atelier.njk
+seoTitle: "ד״ר אלי שזיפי – רופא משפחה ואסתטיקה בראש העין"
 title: אודות
 description: ד״ר אלי שזיפי (MD), רופא משפחה ואסתטיקה. בוגר הפקולטה לרפואה של אוניברסיטת בר אילן בצפת. קליניקה בראש העין.
 permalink: /about/
 ---
-<section class="wrap page about">
-  {% picture "/images/doctor-portrait.jpg", site.doctor, "(max-width: 760px) 100vw, 480px", 'class="about-photo" width="768" height="1366"' %}
-  <div class="about-text">
-    <h1 class="page-title">נעים להכיר</h1>
-    <p class="lead">אני ד"ר אלי שזיפי (MD).</p>
+<section class="head">
+  <div class="head-text">
+    <p class="greeting">נעים להכיר</p>
+    <h1>{{ site.doctor }}</h1>
+    <p class="lead"><span class="hero-role">{{ site.jobTitle }}</span></p>
+    <p>אני ד"ר אלי שזיפי (MD).</p>
     <p>סיימתי את לימודי הרפואה שלי בבר אילן, צפת.</p>
     <p>אני עובד כרופא משפחה ואסתטיקה עם ניסיון רחב שמחבר בין תחומים רפואיים ואסתטיים.</p>
-    <p>הפילוסופיה שלי פשוטה: כל מטופל ראוי לתוצאה שנראית טבעית, מרגישה נכונה ומשפרת את הביטחון העצמי — מבלי לשנות את מי שהוא באמת.</p>
-    <p>אני שם דגש על מקצועיות, יחס אישי ותוצאות טבעיות, תוך שימוש בחומרים האיכותיים והבטוחים ביותר.</p>
-    <p>במרפאתי תהנו מהטיפולים המתקדמים ביותר, באווירה חמה ונינוחה, עם יחס ומעקב צמוד עד להשגת התוצאה המושלמת. המרפאה שלי ממוקמת בראש העין ומקבלת מטופלים מכל אזור המרכז.</p>
-    <p>מוזמנים ליצור אתי קשר ולקבוע פגישת ייעוץ והתאמת תכנית טיפול אישית.</p>
-    <p><a class="btn btn-brown" href="{{ site.whatsapp }}" target="_blank" rel="noopener">צרו איתי קשר</a></p>
+    <p class="actions"><a class="btn" href="{{ site.whatsapp }}" target="_blank" rel="noopener">צרו איתי קשר</a></p>
+  </div>
+  <div class="head-field">
+    <div class="print stock print-tall">{% picture "/images/doctor-portrait.jpg", site.doctor, "(max-width: 960px) 100vw, 480px", 'width="768" height="1366" fetchpriority="high"' %}</div>
+  </div>
+</section>
+<section class="section">
+  <div class="container creed">
+    <p class="pull">הפילוסופיה שלי פשוטה: כל מטופל ראוי לתוצאה שנראית טבעית, מרגישה נכונה ומשפרת את הביטחון העצמי – מבלי לשנות את מי שהוא באמת.</p>
+    <div class="creed-text">
+      <p>אני שם דגש על מקצועיות, יחס אישי ותוצאות טבעיות, תוך שימוש בחומרים האיכותיים והבטוחים ביותר.</p>
+      <p>במרפאתי תהנו מהטיפולים המתקדמים ביותר, באווירה חמה ונינוחה, עם יחס ומעקב צמוד עד להשגת התוצאה המושלמת. המרפאה שלי ממוקמת בראש העין ומקבלת מטופלים מכל אזור המרכז.</p>
+      <p>מוזמנים ליצור אתי קשר ולקבוע פגישת ייעוץ והתאמת תוכנית טיפול אישית.</p>
+    </div>
   </div>
 </section>

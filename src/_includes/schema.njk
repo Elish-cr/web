@@ -1,0 +1,59 @@
+{#- Structured data. Only facts that a visitor can read on the site. -#}
+{%- set isPost = page.url != "/blog/" and page.url.startsWith("/blog/") %}
+{%- if page.url != "/404.html" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalClinic",
+      "@id": "{{ site.url }}/#clinic",
+      "name": "{{ site.name }} - {{ site.doctor }}",
+      "url": "{{ site.url }}/",
+      "telephone": "+972559526838",
+      "image": "{{ site.url }}/images/clinic-room.jpg",
+      "logo": "{{ site.url }}/images/logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "{{ site.street }}",
+        "addressLocality": "{{ site.city }}",
+        "addressCountry": "IL"
+      },
+      "sameAs": ["{{ site.instagram }}", "{{ site.facebook }}"]
+    },
+    {
+      "@type": "Person",
+      "@id": "{{ site.url }}/#doctor",
+      "name": "{{ site.doctor }}",
+      "jobTitle": "{{ site.jobTitle }}",
+      "url": "{{ site.url }}/about/",
+      "image": "{{ site.url }}/images/doctor-portrait.jpg",
+      "worksFor": { "@id": "{{ site.url }}/#clinic" }
+    }
+    {%- if isPost %},
+    {
+      "@type": "BlogPosting",
+      "@id": "{{ site.url }}{{ page.url }}#article",
+      "headline": {{ title | dump | safe }},
+      "description": {{ (metaDescription or description) | dump | safe }},
+      "datePublished": "{{ page.date | isoDate }}",
+      "inLanguage": "he",
+      "mainEntityOfPage": "{{ site.url }}{{ page.url }}",
+      "image": "{{ site.url }}{{ shareImage }}",
+      "author": { "@id": "{{ site.url }}/#doctor" },
+      "publisher": { "@id": "{{ site.url }}/#clinic" }
+    }
+    {%- endif %}
+    {%- if slug or isPost %},
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "{{ "טיפולים ותוצאות" if slug else "מאמרים" }}", "item": "{{ site.url }}{{ "/treatments/" if slug else "/blog/" }}" },
+        { "@type": "ListItem", "position": 2, "name": {{ title | dump | safe }}, "item": "{{ site.url }}{{ page.url }}" }
+      ]
+    }
+    {%- endif %}
+  ]
+}
+</script>
+{%- endif %}

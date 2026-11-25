@@ -1,0 +1,84 @@
+{%- from "icons.njk" import icon -%}
+{%- set shareImage = "/images/clinic-room.jpg" -%}
+{%- if slug %}{% set shareImage = "/images/" + slug + "/cover.jpg" %}{% elif image %}{% set shareImage = image %}{% elif page.url == "/about/" %}{% set shareImage = "/images/doctor-portrait.jpg" %}{% endif -%}
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if seoTitle %}{{ seoTitle }}{% elif title and page.url != "/" %}{{ title }} | {{ site.name }} – {{ site.doctor }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ metaDescription or description or site.description }}">
+{%- if noindex %}
+  <meta name="robots" content="noindex">
+{%- endif %}
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <meta property="og:type" content="{{ 'article' if layout == 'post.njk' else 'website' }}">
+  <meta property="og:locale" content="he_IL">
+  <meta property="og:site_name" content="{{ site.name }} – {{ site.doctor }}">
+  <meta property="og:title" content="{{ seoTitle or title or site.title }}">
+  <meta property="og:description" content="{{ metaDescription or description or site.description }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:image" content="{{ site.url }}{{ shareImage }}">
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="288x288">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&family=Fredoka:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/site.css">
+  <script>document.documentElement.classList.add("js");</script>
+  {% include "schema.njk" %}
+</head>
+<body>
+  <a class="skip" href="#main">דילוג לתוכן</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="תפריט">
+        <span></span><span></span>
+      </button>
+      <nav id="nav" class="nav" aria-label="ניווט ראשי">
+        {%- set links = [["/", "בית"], ["/about/", "אודות"], ["/treatments/", "טיפולים ותוצאות"], ["/blog/", "מאמרים"], ["/testimonials/", "לקוחות מספרים"]] %}
+        <ul>
+          {%- for l in links %}
+          <li><a href="{{ l[0] }}"{% if page.url == l[0] or (l[0] != "/" and page.url.startsWith(l[0])) %} aria-current="page"{% endif %}>{{ l[1] }}</a></li>
+          {%- endfor %}
+        </ul>
+      </nav>
+      <a class="logo" href="/" aria-label="{{ site.name }} – דף הבית">
+        {% picture "/images/logo.png", "Trail of Silk – Dr. Eli Shezifi", "120px", 'width="92" height="82"' %}
+      </a>
+      <a class="btn header-book" href="{{ site.booking }}" target="_blank" rel="noopener">קביעת טיפול</a>
+    </div>
+  </header>
+
+  <main id="main">
+    {{ content | safe }}
+  </main>
+
+  {% include "atelier-contact.njk" %}
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-sign">{{ site.doctor }}</p>
+      <p>© {{ year }} {{ site.name }}</p>
+      <p>{{ site.address }}</p>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="{{ site.whatsapp }}" target="_blank" rel="noopener" aria-label="שליחת הודעה בוואטסאפ">{{ icon("whatsapp", 28) }}</a>
+
+  <script>
+    const t = document.querySelector(".menu-toggle");
+    const setMenu = (open) => {
+      document.body.classList.toggle("nav-open", open);
+      t.setAttribute("aria-expanded", open);
+    };
+    t.addEventListener("click", () => setMenu(!document.body.classList.contains("nav-open")));
+    document.addEventListener("pointerdown", (e) => {
+      if (document.body.classList.contains("nav-open") && !e.target.closest(".site-header")) setMenu(false);
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && document.body.classList.contains("nav-open")) { setMenu(false); t.focus(); }
+    });
+  </script>
+  <script src="/js/home.js" defer></script>
+</body>
+</html>

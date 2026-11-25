@@ -17,7 +17,8 @@ Then open http://localhost:8080.
 - `src/_data/testimonials.json`: patient reviews
 - `src/blog/`: blog posts, one Markdown file each
 - `src/treatments/`: treatment pages; photos are in `src/images/<treatment>/`
-- `src/css/style.css`: all styling
+- `src/css/site.css`, `tokens.css`, `base.css`: all styling (`style.css` is the old design, no longer used)
+- `src/_includes/schema.njk`: data for search engines; `seoTitle`, `metaDescription` and `relatedTreatments` in a page's front matter feed the search title, the search description and the related links
 - `src/_data/legacyRedirects.json` + `src/legacy-redirects.njk`: forwarding pages for the old Hebrew Wix addresses (Render's redirect rules can't match Hebrew paths)
 - `src/_redirects`: the full list of old Wix addresses (kept for reference; Render doesn't read this file)
 - `src/_data/images.json`: sizes of each image and its WebP versions, used by the `{% picture %}` shortcode

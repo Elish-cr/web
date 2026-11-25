@@ -1,28 +1,40 @@
 ---
-layout: base.njk
+layout: atelier.njk
+seoTitle: "לקוחות מספרים – ד״ר אלי שזיפי, ראש העין"
 title: לקוחות מספרים
 description: חוות דעת של מטופלים ומטופלות על הטיפולים בקליניקה של ד״ר אלי שזיפי בראש העין.
 permalink: /testimonials/
 ---
 {%- from "icons.njk" import icon -%}
-<section class="testimonials-page">
-  <div class="testimonials-bg" style="background-image:url('/images/bg-testimonials.jpg')"></div>
-  <div class="wrap page">
-    <h1 class="page-title">הלקוחות מספרים</h1>
-    <p class="center-text"><a class="btn btn-google" href="{{ site.googleReviews }}" target="_blank" rel="noopener">לכל הביקורות שלנו בגוגל</a></p>
-    <p class="lead center-text">קראו חוות דעת של מטופלים ומטופלות מרוצים</p>
-    <div class="t-grid">
-      {%- for r in testimonials.all %}
-      <figure class="t-card">
-        <div class="stars stars-warm" aria-label="5 כוכבים">{% for i in range(5) %}{{ icon("star", 18) }}{% endfor %}</div>
+<section class="head">
+  <div class="head-text">
+    <h1>הלקוחות מספרים</h1>
+    <p class="lead">קראו חוות דעת של מטופלים ומטופלות מרוצים</p>
+    <p class="actions"><a class="btn btn-quiet" href="{{ site.googleReviews }}" target="_blank" rel="noopener">לכל הביקורות עליי בגוגל</a></p>
+  </div>
+  <div class="head-field">
+    {%- set first = testimonials.all[0] %}
+    <figure class="field-voice">
+      <div class="stars" role="img" aria-label="5 כוכבים">{% for i in range(5) %}{{ icon("star", 18) }}{% endfor %}</div>
+      <blockquote>״{{ first.text }}״</blockquote>
+      <figcaption>{{ first.name }}{% if first.city %} <span>{{ first.city }}</span>{% endif %}</figcaption>
+    </figure>
+  </div>
+</section>
+<section class="section" aria-label="חוות דעת">
+  <div class="container">
+    <div class="voices">
+      {%- for r in testimonials.all %}{% if not loop.first %}
+      <figure class="review">
+        <div class="stars" role="img" aria-label="5 כוכבים">{% for i in range(5) %}{{ icon("star", 18) }}{% endfor %}</div>
         <blockquote>{% if r.tag %}<strong>{{ r.tag }}</strong> {% endif %}״{{ r.text }}״</blockquote>
         <figcaption>{{ r.name }}{% if r.city %} <span>{{ r.city }}</span>{% endif %}</figcaption>
       </figure>
-      {%- endfor %}
+      {%- endif %}{% endfor %}
     </div>
     <div class="review-shots">
-      {% picture "/images/review-1.jpg", "ביקורת בגוגל על ד״ר אלי שזיפי", "(max-width: 760px) 100vw, 540px", 'loading="lazy"' %}
-      {% picture "/images/review-2.jpg", "ביקורת בגוגל על ד״ר אלי שזיפי", "(max-width: 760px) 100vw, 540px", 'loading="lazy"' %}
+      <div class="stock shot">{% picture "/images/review-1.jpg", "ביקורת בגוגל על ד״ר אלי שזיפי", "(max-width: 960px) 100vw, 640px", 'loading="lazy"' %}</div>
+      <div class="stock shot">{% picture "/images/review-2.jpg", "ביקורת בגוגל על ד״ר אלי שזיפי", "(max-width: 960px) 100vw, 640px", 'loading="lazy"' %}</div>
     </div>
   </div>
 </section>
